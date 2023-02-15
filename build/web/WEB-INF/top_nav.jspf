@@ -1,0 +1,45 @@
+<%@page import = "model.Profile" %>
+<nav class="container-fluid" id="main-nav-user-home" style="background:linear-gradient(135deg,#f45fad,#71b7e6)">
+    <div class="row">
+        <div class="col-md-6" id="user-tools-left">
+            <a id="main-logo" style="border-style: groove;
+                                      border-color: white;
+      border-width: 3px; color: wheat"  >KnowEachOther</a>
+            <!-- <div id="search-box">
+                <input type="text" name="search-friend">
+                <button><i class="fa fa-search"></i></button>
+            </div> -->
+        </div>
+        <div class="col-md-6" id="user-tools-right">
+            <ul>
+                <li>
+                    <a href="profile.jsp" style="color: white">
+                        <img class="avatar-small" src="${pageContext.servletContext.contextPath}/ProcessImage?emailOrPhone=${sessionScope.user.emailOrPhone}"> 
+                        <% 
+                            Profile profile = (Profile) session.getAttribute("user");
+                        %>
+                        
+                        <%= profile.getFirstName() %>
+                        
+                    </a>
+                </li>
+                <li><a href="search.jsp" style="color: white">Find your love</a></li>
+                <li>
+                    <a href="/"><i class="fa fa-users" aria-hidden="true"></i></a>
+                    <span class="mess-notif"></span>
+                </li>
+                <li>
+                    <a href="chatbox.jsp"><i class="fa fa-weixin" aria-hidden="true"></i></a>
+                    <span class="mess-notif">toideptrai</span>
+                </li>
+                <li>
+                    <a href="/"><i class="fa fa-globe" aria-hidden="true"></i></a>
+                    <span class="mess-notif"></span>
+                </li>
+                <li>
+                    <a href="login.jsp" style="color: white"><label>Log out</label></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
